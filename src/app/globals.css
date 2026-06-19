@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+/**
+ * "Rugged Premium" Design System - CSS Custom Properties
+ *
+ * All color tokens, shadows, and spacing are defined here
+ * for use in non-Tailwind contexts (third-party components, SVGs, etc.)
+ */
+
+:root {
+  /* Brand Colors */
+  --color-primary: #1a3c2a;
+  --color-secondary: #b5dda2;
+  --color-tertiary: #f4a622;
+  --color-base: #ffffff;
+  --color-black: #070707;
+  --color-gray: #eaeaea;
+
+  /* Semantic Colors - Error */
+  --color-error-primary: #f04438;
+  --color-error-secondary: #fee4e2;
+
+  /* Semantic Colors - Success */
+  --color-success-primary: #17b26a;
+  --color-success-secondary: #dcfae6;
+
+  /* Semantic Colors - Warning */
+  --color-warning-primary: #f79009;
+  --color-warning-secondary: #fef0c7;
+
+  /* Text Colors */
+  --color-text-primary: #000000;
+  --color-text-secondary: #494949;
+  --color-text-tertiary: #8b928c;
+
+  /* Shadows - Hard/Offset style (no blur) */
+  --shadow-hard: 4px 4px 0px #070707;
+  --shadow-hard-sm: 2px 2px 0px #070707;
+
+  /* Font Families */
+  /* --font-display is set by Cal Sans local font (todo) */
+  /* --font-body is set by Plus Jakarta Sans from next/font/google */
+  /* --font-mono is set by JetBrains Mono from next/font/google */
+}
+
+/* Global base styles */
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-base);
+  color: var(--color-text-primary);
+  font-family: var(--font-body, system-ui, -apple-system, sans-serif);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ensure no rounded corners anywhere */
+* {
+  border-radius: 0 !important;
+}
+
+/* Focus ring for accessibility - hard-edged style */
+:focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 2px;
+}
+
+/* Selection styles */
+::selection {
+  background-color: var(--color-primary);
+  color: var(--color-base);
+}
