@@ -26,14 +26,14 @@ const headingVariants = cva(
 );
 
 interface HeadingProps
-  extends React.HTMLAttributes<HTMLHeadingElement>,
+  extends Omit<React.HTMLAttributes<HTMLHeadingElement>, "color">,
     VariantProps<typeof headingVariants> {
   level?: "h1" | "h2" | "h3" | "h4";
 }
 
 const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>(
   ({ className, level = "h1", color, ...props }, ref) => {
-    const Component = level as keyof JSX.IntrinsicElements;
+    const Component = level as React.ElementType;
     return React.createElement(
       Component,
       {
@@ -83,7 +83,7 @@ const textVariants = cva("font-body", {
 });
 
 interface TextProps
-  extends React.HTMLAttributes<HTMLParagraphElement>,
+  extends Omit<React.HTMLAttributes<HTMLParagraphElement>, "color">,
     VariantProps<typeof textVariants> {}
 
 const Text = React.forwardRef<HTMLParagraphElement, TextProps>(
@@ -129,7 +129,7 @@ const monoVariants = cva("font-mono", {
 });
 
 interface MonoProps
-  extends React.HTMLAttributes<HTMLSpanElement>,
+  extends Omit<React.HTMLAttributes<HTMLSpanElement>, "color">,
     VariantProps<typeof monoVariants> {}
 
 const Mono = React.forwardRef<HTMLSpanElement, MonoProps>(

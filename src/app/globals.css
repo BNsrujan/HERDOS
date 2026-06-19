@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
 /**
  * "Rugged Premium" Design System - CSS Custom Properties
  *
@@ -43,6 +44,41 @@
   /* --font-mono is set by JetBrains Mono from next/font/google */
 }
 
+@theme inline {
+  /* Font Families */
+  --font-display: var(--font-display, "Cal Sans", sans-serif);
+  --font-body: var(--font-body, "Plus Jakarta Sans", sans-serif);
+  --font-mono: var(--font-mono, "JetBrains Mono", monospace);
+
+  /* Brand Colors */
+  --color-primary: var(--color-primary);
+  --color-secondary: var(--color-secondary);
+  --color-tertiary: var(--color-tertiary);
+  --color-base: var(--color-base);
+  --color-black: var(--color-black);
+  --color-gray: var(--color-gray);
+
+  /* Semantic Colors - Error */
+  --color-error-primary: var(--color-error-primary);
+  --color-error-secondary: var(--color-error-secondary);
+
+  /* Semantic Colors - Success */
+  --color-success-primary: var(--color-success-primary);
+  --color-success-secondary: var(--color-success-secondary);
+
+  /* Semantic Colors - Warning */
+  --color-warning-primary: var(--color-warning-primary);
+  --color-warning-secondary: var(--color-warning-secondary);
+
+  /* Text Colors */
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
+
+  /* Shadows - Hard/Offset style (no blur) */
+  --shadow-hard: var(--shadow-hard);
+  --shadow-hard-sm: var(--shadow-hard-sm);
+}
 /* Global base styles */
 html {
   height: 100%;

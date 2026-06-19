@@ -28,7 +28,7 @@ const selectVariants = cva(
 type SelectVariantProps = VariantProps<typeof selectVariants>;
 
 export interface SelectProps
-  extends React.SelectHTMLAttributes<HTMLSelectElement>,
+  extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, "size">,
     SelectVariantProps {}
 
 const Select = React.forwardRef<HTMLSelectElement, SelectProps>(

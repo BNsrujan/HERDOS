@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import Navbar from "@/components/navbar";
+import Footer from "@/components/footer";
 // TODO: Add Cal Sans local font files
 // Download Cal Sans .woff2 files and place them in public/fonts/
 // Then uncomment and import below:
@@ -58,7 +60,11 @@ export default function RootLayout({
       className={`${plusJakartaSans.variable} ${jetbrainsMono.variable} h-full antialiased`}
       // TODO: Add calSans.variable to className once Cal Sans fonts are available
     >
-      <body className="min-h-full flex flex-col font-body text-text-primary">{children}</body>
+      <body className="min-h-full flex flex-col font-body text-text-primary">
+        <Navbar />
+        <main className="flex-grow">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }

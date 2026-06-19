@@ -1,7 +1,7 @@
 import type { Config } from "tailwindcss";
 import { colors, shadows } from "./src/lib/tokens";
 
-const config: Config = {
+const config: any = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -58,7 +58,7 @@ const config: Config = {
   },
   plugins: [
     // Custom plugin to force all rounded-* utilities to 0
-    function ({ addUtilities, theme }) {
+    function ({ addUtilities, theme }: any) {
       const borderRadiusUtilities = {
         ".rounded-none": { "border-radius": "0px" },
         ".rounded-sm": { "border-radius": "0px" },
